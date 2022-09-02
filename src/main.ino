@@ -1,7 +1,16 @@
 #include <Servo.h>
 #include <Wire.h>
 #include <RtcDS1307.h>
+#include <GyverButton.h>
 RtcDS1307<TwoWire> Rtc(Wire);
+
+#define BTN_Left 3
+#define BTN_Right 4
+#define BTN_Enter 5
+
+GButton Left(BTN_Left);
+Gbutton Right(BTN_Right);
+Gbutton Enter(BTN_Enter);
 
 class IndicatorServo
 {
@@ -120,6 +129,10 @@ void sleepClock()
 
 void loop()
 {
+
+Right.tick();
+Left.tick();
+Entet.tick();
 
   RtcDateTime now = Rtc.GetDateTime();
   //Serial.println(now.Second() % 10);
