@@ -12,6 +12,9 @@ GButton Left(BTN_Left);
 Gbutton Right(BTN_Right);
 Gbutton Enter(BTN_Enter);
 
+int currentMenu;
+enum {}
+
 class IndicatorServo
 {
   public:
@@ -130,9 +133,18 @@ void sleepClock()
 void loop()
 {
 
+switch ()
+{
+case /* constant-expression */:
+  /* code */
+  break;
+
+default:
+  break;
+}
 Right.tick();
 Left.tick();
-Entet.tick();
+Enter.tick();
 
   RtcDateTime now = Rtc.GetDateTime();
   //Serial.println(now.Second() % 10);
